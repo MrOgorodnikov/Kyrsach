@@ -32,7 +32,29 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge">
+      <HintPath>..\..\Release Libs\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video">
+      <HintPath>..\..\Release Libs\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow">
+      <HintPath>..\..\Release Libs\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="BarcodeLib.Barcode.WinForms">
+      <HintPath>..\..\..\BarcodeLib.Barcode.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="BarcodeLib.BarcodeReader">
+      <HintPath>..\..\..\BarcodeLib.BarcodeReader.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,14 +67,67 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BussinesLogic\IAdd.cs" />
+    <Compile Include="BussinesLogic\Img.cs" />
+    <Compile Include="BussinesLogic\Product.cs" />
+    <Compile Include="BussinesLogic\ProductType.cs" />
+    <Compile Include="BussinesLogic\QRLogo.cs" />
+    <Compile Include="FormCamera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCamera.Designer.cs">
+      <DependentUpon>FormCamera.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAddNewProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddNewProduct.Designer.cs">
+      <DependentUpon>FormAddNewProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704231156395_InitialCreate.cs" />
+    <Compile Include="Migrations\201704231156395_InitialCreate.Designer.cs">
+      <DependentUpon>201704231156395_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704251431504_DeleteFoodAndNonFood.cs" />
+    <Compile Include="Migrations\201704251431504_DeleteFoodAndNonFood.Designer.cs">
+      <DependentUpon>201704251431504_DeleteFoodAndNonFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704251511113_DeleteManufactureDate.cs" />
+    <Compile Include="Migrations\201704251511113_DeleteManufactureDate.Designer.cs">
+      <DependentUpon>201704251511113_DeleteManufactureDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\ProductContext.cs" />
+    <Compile Include="Model\ProductEntity.cs" />
+    <Compile Include="Model\ProductType.cs" />
+    <Compile Include="Model\TransferProduct.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCamera.resx">
+      <DependentUpon>FormCamera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddNewProduct.resx">
+      <DependentUpon>FormAddNewProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704231156395_InitialCreate.resx">
+      <DependentUpon>201704231156395_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704251431504_DeleteFoodAndNonFood.resx">
+      <DependentUpon>201704251431504_DeleteFoodAndNonFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704251511113_DeleteManufactureDate.resx">
+      <DependentUpon>201704251511113_DeleteManufactureDate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,6 +137,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
